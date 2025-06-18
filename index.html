@@ -35,12 +35,9 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    #unlocked {
-      margin-top: 40px;
-      display: none;
-      background: #e7f4ec;
-      padding: 20px;
-      border-radius: 10px;
+    .error {
+      color: crimson;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -48,33 +45,25 @@
   <div class="container">
     <h2>Clue One</h2>
     <p>
-      Amo, only one place holds the silence of our first night.<br>
+      Amo, only one place holds the silence of our first night.<br><br>
       Use the coordinates to find it:<br><br>
-      <strong>52.3702° N, 4.8952° E</strong>
+      <strong>-12.891858, -38.347755</strong>
     </p>
     <p>When you've found it, enter the hotel name below:</p>
     <input type="text" id="passwordInput" placeholder="Type the hotel name...">
     <br>
     <button onclick="checkPassword()">Unlock</button>
-
-    <div id="unlocked">
-      <h3>🌙 You found it.</h3>
-      <p>
-        This is where love became real.<br>
-        Now go find the playlist I made for you in 2023.<br>
-        The title is your next password...
-      </p>
-    </div>
+    <div class="error" id="errorMsg"></div>
   </div>
 
   <script>
     function checkPassword() {
-      const correctAnswer = "GoldenTulip"; // Replace with your actual hotel name
-      const userInput = document.getElementById("passwordInput").value.trim();
-      if (userInput.toLowerCase() === correctAnswer.toLowerCase()) {
-        document.getElementById("unlocked").style.display = "block";
+      const correctAnswer = "hotel deville prime salvador";
+      const input = document.getElementById("passwordInput").value.trim().toLowerCase();
+      if (input === correctAnswer) {
+        window.location.href = "clue2.html";
       } else {
-        alert("Not quite. Check your spelling, minha vida.");
+        document.getElementById("errorMsg").innerText = "Not quite, minha vida. Try again.";
       }
     }
   </script>
