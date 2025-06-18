@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clue Two – The Playlist</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fef8f5;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>You found it.</h2>
+    <p>
+      Our first night. That bed. That quiet joy.<br><br>
+      Now Who did lie about eating all next day but infact she eat…<br>
+      What did she eat?.
+    </p>
+  </div>
+</body>
+</html>
