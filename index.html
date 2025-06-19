@@ -6,27 +6,51 @@
   <style>
     body {
       font-family: 'Georgia', serif;
-      background-color: #f3f3f3;
-      text-align: center;
-      padding: 100px 20px;
+      background-image: url('https://i.imgur.com/GXYIE8E.jpg'); /* Soft romantic floral */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      color: #2e2e2e;
     }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.8);
+      min-height: 100vh;
+      padding: 80px 20px;
+    }
+
     .container {
       max-width: 600px;
       margin: auto;
       background: white;
       padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      border-radius: 14px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
+
+    h2 {
+      color: #6b4c9a;
+    }
+
+    .photo {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
     input[type="text"] {
-      padding: 10px;
-      width: 70%;
+      padding: 12px;
+      width: 75%;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 16px;
     }
+
     button {
-      padding: 10px 20px;
+      padding: 10px 25px;
       margin-top: 20px;
       font-size: 16px;
       background-color: #6b4c9a;
@@ -35,28 +59,33 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
     .error {
       color: crimson;
-      margin-top: 10px;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Clue One</h2>
-    <p>
-      Do you remember, the day i knew?. <br><br>
-      The day i felt it. <br>
-      I said i loved you, but there was another feeling there.<br><br>
-      I felt fear along side joy.<br>
-      I told you the feeling i had, i have told you after.<br>
-      Love mixed with another feeling i feel a lot.
-    </p>
-    <p>What feeling did i feel?</p>
-    <input type="text" id="passwordInput" placeholder="Write your answer here...">
-    <br>
-    <button onclick="checkPassword()">Unlock</button>
-    <div class="error" id="errorMsg"></div>
+  <div class="overlay">
+    <div class="container">
+      <img src="https://i.imgur.com/YuVrM5V.jpg" alt="Us" class="photo"> <!-- You can replace this -->
+
+      <h2>The Moment I Knew</h2>
+      <p>
+        Do you remember the moment, amor? <br><br>
+        The day I looked at you and felt something I couldn’t control. <br>
+        I said I loved you — but behind those words was something else. <br><br>
+        Joy, yes. But also a wild trembling. <br>
+        I told you, later, what it really was.<br>
+        A feeling that walks with me always.
+      </p>
+      <p>What feeling was it?</p>
+      <input type="text" id="passwordInput" placeholder="Write your answer here...">
+      <br>
+      <button onclick="checkPassword()">Unlock</button>
+      <div class="error" id="errorMsg"></div>
+    </div>
   </div>
 
   <script>
@@ -66,7 +95,7 @@
       if (input === correctAnswer) {
         window.location.href = "clue2.html";
       } else {
-        document.getElementById("errorMsg").innerText = "Not quite amo. Think back to when I confessed it, Its a feeling i have a lot.";
+        document.getElementById("errorMsg").innerText = "Not quite amo. You know this. You were there when I said it.";
       }
     }
   </script>
