@@ -78,7 +78,7 @@
 
   <div class="container">
     <div class="photo-box">
-     <img src="https://i.imgur.com/8V2L07T.jpg" alt="Photo of Us"> <!-- Replace this URL with your own -->
+      <img src="https://i.imgur.com/8V2L07T.jpg" alt="Photo of Us"> <!-- Replace this URL with your own -->
     </div>
 
     <h2>The Moment I Knew</h2>
@@ -91,92 +91,25 @@
       I told you, later, what it really was.<br>
       A feeling that walks with me always.
     </p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>The Moment I Knew</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Georgia', serif;
-      background: linear-gradient(to bottom right, #ffeef2, #fff8fc);
-      background-image: url('https://i.imgur.com/B8iZpHf.png'); /* faded roses */
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      color: #3b2a2a;
+
+    <p>What feeling was it?</p>
+    <input type="text" id="passwordInput" placeholder="Write your answer here...">
+    <br>
+    <button onclick="checkPassword()">Unlock</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const correctAnswer = "panic";
+      const input = document.getElementById("passwordInput").value.trim().toLowerCase();
+      if (input === correctAnswer) {
+        window.location.href = "clue2.html";
+      } else {
+        document.getElementById("errorMsg").innerText = "Not quite amo. Think back to when I confessed it. It's a feeling I carry often.";
+      }
     }
+  </script>
 
-    .container {
-      max-width: 700px;
-      margin: 80px auto;
-      background: rgba(255, 255, 255, 0.92);
-      padding: 45px;
-      border-radius: 20px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      font-family: 'Cursive', 'Georgia', serif;
-      color: #c03955;
-      font-size: 30px;
-      margin-bottom: 20px;
-    }
-
-    .photo-box {
-      border: 3px solid #f4c7c3;
-      border-radius: 15px;
-      overflow: hidden;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .photo-box img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 25px;
-    }
-
-    input[type="text"] {
-      padding: 12px;
-      width: 70%;
-      border: 1px solid #dca3a3;
-      border-radius: 6px;
-      font-size: 15px;
-      background-color: #fff9f9;
-    }
-
-    button {
-      padding: 10px 24px;
-      margin-top: 20px;
-      font-size: 16px;
-      background-color: #c03955;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .error {
-      color: #b30030;
-      margin-top: 15px;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <div class="photo-box">
-      <img src="https://i.imgur.com/lc1dNE3.jpg" alt="Photo of Us"> <!-- Replace with your own photo -->
-    </div>
-
-    <
+</body>
+</html>
