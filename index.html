@@ -45,6 +45,53 @@
   <div class="container">
     <h2>Clue One</h2>
     <p>
+      Amo,<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clue One – The Coordinates</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 70%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      background-color: #6b4c9a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .error {
+      color: crimson;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Clue One</h2>
+    <p>
       Amo, only one place holds the silence of our first night.<br><br>
       Use the coordinates to find it:<br><br>
       <strong>-12.891858, -38.347755</strong>
@@ -53,17 +100,75 @@
     <input type="text" id="passwordInput" placeholder="Type the hotel name...">
     <br>
     <button onclick="checkPassword()">Unlock</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clue One – The Moment I Knew</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f3f3f3;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 70%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      background-color: #6b4c9a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .error {
+      color: crimson;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Clue One</h2>
+    <p>
+      Do you remember, the day i knew?. <br><br>
+      The day i felt it. <br>
+      I said i loved you, but there was another feeling there.<br><br>
+      I felt fear along side joy.<br>
+      I told you the feeling i had, i have told you after.<br>
+      Love mixed with another feeling i feel a lot.
+    </p>
+    <p>What feeling did i feel?</p>
+    <input type="text" id="passwordInput" placeholder="Write your answer here...">
+    <br>
+    <button onclick="checkPassword()">Unlock</button>
     <div class="error" id="errorMsg"></div>
   </div>
 
   <script>
     function checkPassword() {
-      const correctAnswer = "hotel deville prime salvador";
+      const correctAnswer = "Panic";
       const input = document.getElementById("passwordInput").value.trim().toLowerCase();
       if (input === correctAnswer) {
         window.location.href = "clue2.html";
       } else {
-        document.getElementById("errorMsg").innerText = "Not quite, minha vida. Try again.";
+        document.getElementById("errorMsg").innerText = "Not quite amo. Think back to when I confessed it, Its a feeling i have a lot.";
       }
     }
   </script>
