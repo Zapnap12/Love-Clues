@@ -1,95 +1,94 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Island Memory</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Island Memories</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Georgia', serif;
-      background: linear-gradient(to bottom right, #ffe5e0, #e0f7f7);
-      color: #4d2c2c;
+      background: linear-gradient(to bottom right, #ffe4e1, #e0f7fa);
+      color: #333;
       text-align: center;
-      overflow-x: hidden;
     }
-    .content {
-      padding: 50px 20px;
-    }
-    h1 {
-      font-family: 'Cursive';
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: white;
-      text-shadow: 1px 1px 3px #c66;
-    }
-    .video-container {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
-    .video-box {
-      width: 300px;
-    }
-    .video-box video {
-      width: 100%;
-      border-radius: 12px;
-      border: 2px solid gold;
-    }
-    .caption {
+
+    h2 {
+      font-size: 24px;
+      margin-top: 40px;
+      color: #c2185b;
       font-style: italic;
-      margin-top: 10px;
+    }
+
+    .video-section {
+      margin: 30px 20px;
+    }
+
+    video {
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+      border: 3px solid gold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      font-size: 16px;
+      margin: 12px 20px;
       color: #444;
     }
-    .poem {
-      margin: 40px auto;
-      max-width: 600px;
-      font-size: 18px;
-      color: #333;
+
+    .quote {
       font-style: italic;
-    }
-    .continue-button {
-      display: none;
       margin-top: 30px;
-      font-size: 18px;
-      padding: 12px 24px;
-      background-color: crimson;
+      font-size: 17px;
+      color: #444;
+    }
+
+    .next-button {
+      display: inline-block;
+      margin: 40px auto;
+      padding: 12px 26px;
+      background-color: #c2185b;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 25px;
+      font-size: 16px;
       cursor: pointer;
-      animation: pulse 2s infinite;
+      text-decoration: none;
+      transition: background 0.3s ease;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+
+    .next-button:hover {
+      background-color: #ad1457;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Some places live inside you forever…</h1><div class="video-container">
-  <div class="video-box">
-    <video controls src="FB_VID_8631125396235769244.mp4"></video>
-    <div class="caption">I left my heart in the sand, but you’ve held it ever since.</div>
+
+  <h2>Some places live inside you forever...</h2>
+
+  <div class="video-section">
+    <video controls>
+      <source src="heart_in_sand.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p>I left my heart in the sand, but you’ve held it ever since.</p>
   </div>
-  <div class="video-box">
-    <video controls src="FB_VID_8749442362768847691.mp4"></video>
-    <div class="caption">A fancy meal. A perfect moment. A man in love.</div>
+
+  <div class="video-section">
+    <video controls>
+      <source src="fancy_meal.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p>A fancy meal. A perfect moment. A man in love.</p>
   </div>
-</div>
 
-<div class="poem">
-  That island didn’t just show me beauty.<br>
-  It showed me us — real, raw, laughing, full, warm.
-</div>
+  <p class="quote">That island didn’t just show me beauty.<br>
+  It showed me us — real, raw, laughing, full, warm.</p>
 
-<button class="continue-button" onclick="window.location.href='clue8.html'">Continue</button>
+  <a href="page9.html" class="next-button">Continue</a>
 
-  </div>  <script>
-    setTimeout(() => {
-      document.querySelector('.continue-button').style.display = 'inline-block';
-    }, 30000); // 30 seconds
-  </script></body>
+</body>
 </html>
