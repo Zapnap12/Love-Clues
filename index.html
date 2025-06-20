@@ -2,77 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>To My Amor</title>
+  <title>To My Amor – Introduction</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
       font-family: 'Cursive', 'Georgia', serif;
-      background: linear-gradient(to bottom, #ffe6ed, #fff0f5);
-      color: #8a4f63;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      background-color: #ffe6ed;
+      color: #8B3A62;
       text-align: center;
+      padding: 100px 20px;
     }
 
-    .intro-container {
+    .container {
       max-width: 600px;
+      margin: auto;
+      background: white;
       padding: 40px;
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
     }
 
-    h1 {
-      font-size: 28px;
+    .container img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #8B3A62;
+      font-size: 22px;
       margin-bottom: 20px;
     }
 
     p {
       font-size: 18px;
-      line-height: 1.7;
-      margin: 10px 0;
+      line-height: 1.8;
     }
 
-    .start-button {
-      display: inline-block;
+    button {
+      padding: 10px 20px;
       margin-top: 30px;
-      padding: 12px 24px;
       font-size: 16px;
+      background-color: #cc6699;
       color: white;
-      background-color: #b04156;
       border: none;
-      border-radius: 8px;
-      text-decoration: none;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .start-button:hover {
-      background-color: #8a2f44;
+      font-family: 'Cursive', 'Georgia', serif;
     }
   </style>
 </head>
 <body>
-  <div class="intro-container">
-    <h1>To My Amor</h1>
-
-    <p>The world paused.</p>
-    <p>And in that stillness...</p>
-    <p>I found a voice that felt like home.</p>
-
-    <p>This journey isn't a test.</p>
-    <p>It's a reminder —</p>
-    <p>of how unforgettable you are.</p>
-
-    <p>Each clue is a memory.</p>
-    <p>Each page is a piece of us.</p>
-
-    <p style="margin-top: 30px;">Ready?</p>
-
-    <a href="clue1.html" class="start-button">Start the Journey →</a>
+  <div class="container">
+    <img src="map.png" alt="Love Map">
+    <h2>To My Amor</h2>
+    <p>
+      The world paused.<br>
+      And in that stillness...<br>
+      I found a voice that felt like home.<br><br>
+      This journey isn’t a test.<br>
+      It’s a reminder —<br>
+      of how unforgettable you are.<br>
+      Each clue is a memory.<br>
+      Each page is a piece of us.<br><br>
+      Ready?
+    </p>
+    <button onclick="location.href='clue1.html'">Start the Journey →</button>
   </div>
 </body>
 </html>
