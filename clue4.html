@@ -1,143 +1,81 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Clue Four – Our First Dance</title>
+  <title>Save the Last Dance for Me</title>
   <style>
     body {
-      font-family: 'Georgia', serif;
-      background: linear-gradient(to bottom, #ffdce5, #fff);
-      color: #b3003c;
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle, #ffe6ed, #ffccd5);
+      font-family: 'Georgia', cursive;
+      color: #8b0000;
       text-align: center;
-      padding: 60px 20px;
       overflow: hidden;
     }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: white;
-      padding: 40px;
-      border-radius: 18px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.15);
-      position: relative;
-      z-index: 1;
-    }
-    h2 {
-      font-family: 'Cursive', 'Georgia', serif;
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #b3003c;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #ffb6c1;
-      }
-      to {
-        text-shadow: 0 0 20px #ff4d88;
-      }
-    }
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      margin-bottom: 30px;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-    }
-    #poem {
-      display: none;
-      font-size: 18px;
-      line-height: 1.8;
-      white-space: pre-wrap;
-      margin-top: 30px;
-      transition: opacity 1s ease-in;
-    }
-    .button {
-      margin-top: 10px;
-      background-color: #b3003c;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+
     .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+      position: fixed;
       top: 0;
       left: 0;
-      z-index: 0;
-      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/4/4c/Starry-sky-night-background.png') repeat;
+      background-size: cover;
+      opacity: 0.1;
+      z-index: -1;
     }
-    .star {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 5s linear infinite;
+
+    .poem {
+      max-width: 700px;
+      margin: 100px auto 0;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
     }
-    @keyframes twinkle {
-      0% { opacity: 0; transform: translateY(0); }
-      50% { opacity: 1; }
-      100% { opacity: 0; transform: translateY(100vh); }
+
+    .line {
+      font-size: 22px;
+      margin: 20px 0;
+      opacity: 0;
+      transition: opacity 2s;
+    }
+
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div class="stars">
-    <!-- Generate multiple stars -->
-    <script>
-      for (let i = 0; i < 40; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.style.left = Math.random() * 100 + 'vw';
-        star.style.top = '-' + Math.random() * 100 + 'px';
-        star.style.animationDuration = (Math.random() * 5 + 3) + 's';
-        document.querySelector('.stars').appendChild(star);
-      }
-    </script>
-  </div>  <div class="container">
-    <h2>Our First Dance</h2>
-    <p>New Year’s Eve 2021 — the stars didn’t sparkle more than you did.<br>
-    We danced, we laughed, and you kissed me like I was already yours.</p><div class="video-container">
-  <iframe id="ytplayer" src="https://www.youtube.com/embed/n-XQ26KePUQ?enablejsapi=1&rel=0&controls=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<div class="stars"></div>
+
+<audio autoplay>
+  <source src="save_the_last_dance.mp3" type="audio/mp3">
+</audio>
+
+<div class="poem" id="poem">
+  <div class="line">The music played, soft and slow…</div>
+  <div class="line">You took my hand without a word.</div>
+  <div class="line">The room was full, but I saw no one else.</div>
+  <div class="line">Just you, and the spark we stirred.</div>
+  <div class="line">Your smile, the clink of glasses near…</div>
+  <div class="line">But my heart? It danced with yours alone.</div>
+  <div class="line">We twirled through seconds, kissed through time,</div>
+  <div class="line">And I knew — this dance was home.</div>
+  <div class="line">So darling, though the music fades…</div>
+  <div class="line">Save the last dance, always, for me.</div>
 </div>
 
-<button class="button" onclick="revealPoem()">Show the Poem</button>
+<script>
+  const lines = document.querySelectorAll('.line');
+  lines.forEach((line, i) => {
+    setTimeout(() => {
+      line.style.opacity = 1;
+    }, i * 5000); // 5 seconds between each line
+  });
+</script>
 
-<div id="poem">
-  And as the music played…<br>
-  Our feet moved, but our hearts danced more.<br><br>
-
-  We didn’t need steps.<br>
-  We needed smiles.<br><br>
-
-  A song of old love for a love that just began.<br>
-  You were tipsy, I was drunk —<br>
-  but only on you.<br><br>
-
-  I remember the way your eyes said<br>
-  “Don’t you dare let me go.”<br><br>
-
-  So I didn’t.<br>
-  I won’t.<br>
-  I never will.<br><br>
-
-  Save the last dance, always, for me.
-</div>
-
-  </div>  <script>
-    function revealPoem() {
-      document.getElementById("poem").style.display = "block";
-    }
-  </script></body>
+</body>
 </html>
