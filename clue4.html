@@ -2,32 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Save the Last Dance</title>
+  <title>Our First Dance</title>
   <style>
     body {
-      background: black;
-      color: white;
+      background: linear-gradient(to bottom right, #ffccd5, #ffe6eb);
+      color: #6b0000;
       font-family: 'Georgia', serif;
       text-align: center;
       padding: 80px 20px;
-      overflow-x: hidden;
     }
 
-    .line, .photo {
+    .line, .photo, #nextButton {
       opacity: 0;
       transition: opacity 2s ease-in;
-      margin: 20px 0;
+      margin: 20px auto;
     }
 
     .photo {
       max-width: 80%;
       border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      display: block;
     }
 
-    #nextButton {
-      display: none;
-      margin-top: 40px;
+    #startButton, #nextButton {
       padding: 12px 24px;
       font-size: 16px;
       background-color: crimson;
@@ -35,6 +33,7 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      margin-top: 40px;
     }
 
     audio {
@@ -44,12 +43,15 @@
 </head>
 <body>
 
-  <audio autoplay>
+  <h1>Our First Dance</h1>
+  <button id="startButton" onclick="startPoem()">Play Music & Begin</button>
+
+  <audio id="romanticSong">
     <source src="save_the_last_dance.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
-  <div id="poem">
+  <div id="poem" style="margin-top: 40px;">
     <div class="line">Our first New Year together...</div>
     <div class="line">Laughter in the air, candlelight dancing on the walls.</div>
     <div class="line">We ate, we drank, we kissed…</div>
@@ -59,31 +61,37 @@
     <div class="line">And I did.</div>
     <div class="line">I’m still dancing, Eibe.</div>
     <div class="line">Still yours, still holding you close in every beat.</div>
-    <img src="photo1.jpg" class="photo" alt="Photo 1">
-    <img src="photo2.jpg" class="photo" alt="Photo 2">
+    <img src="photo1.jpg" class="photo" alt="Us Dancing">
+    <img src="photo2.jpg" class="photo" alt="New Year Kiss">
   </div>
 
   <button id="nextButton" onclick="goToNextPage()">Next Page</button>
 
   <script>
-    const elements = document.querySelectorAll('#poem .line, #poem .photo');
-    let index = 0;
+    let lines, index = 0, interval;
 
-    function revealNextLine() {
-      if (index < elements.length) {
-        elements[index].style.opacity = 1;
+    function startPoem() {
+      document.getElementById("startButton").style.display = "none";
+      document.getElementById("romanticSong").play();
+
+      lines = document.querySelectorAll('.line, .photo');
+      interval = setInterval(revealNext, 4000);
+    }
+
+    function revealNext() {
+      if (index < lines.length) {
+        lines[index].style.opacity = 1;
         index++;
       } else {
         clearInterval(interval);
-        document.getElementById("nextButton").style.display = "inline-block";
+        document.getElementById("nextButton").style.opacity = 1;
       }
     }
 
-    const interval = setInterval(revealNextLine, 4000);
-
     function goToNextPage() {
-      window.location.href = "page5.html"; // Change this to your next page
+      window.location.href = "page5.html"; // Update this when you know the real page name
     }
   </script>
+
 </body>
 </html>
