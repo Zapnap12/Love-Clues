@@ -11,7 +11,7 @@
       font-family: 'Georgia', cursive;
       color: #8b0000;
       text-align: center;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     .stars {
@@ -27,8 +27,8 @@
     }
 
     .poem {
-      max-width: 700px;
-      margin: 100px auto 0;
+      max-width: 800px;
+      margin: 80px auto 0;
       padding: 40px;
       background-color: rgba(255, 255, 255, 0.8);
       border-radius: 20px;
@@ -36,10 +36,30 @@
     }
 
     .line {
-      font-size: 22px;
-      margin: 20px 0;
+      font-size: 26px;
+      margin: 24px 0;
       opacity: 0;
       transition: opacity 2s;
+    }
+
+    .photo {
+      max-width: 300px;
+      margin: 20px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transition: opacity 2s;
+    }
+
+    #startBtn {
+      margin-top: 150px;
+      padding: 16px 32px;
+      font-size: 20px;
+      background-color: #d14775;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
     }
 
     audio {
@@ -51,17 +71,25 @@
 
 <div class="stars"></div>
 
-<audio autoplay>
+<audio id="bgMusic">
   <source src="save_the_last_dance.mp3" type="audio/mp3">
 </audio>
 
-<div class="poem" id="poem">
+<button id="startBtn">Start the Dance</button>
+
+<div class="poem" id="poem" style="display:none;">
   <div class="line">The music played, soft and slow…</div>
   <div class="line">You took my hand without a word.</div>
   <div class="line">The room was full, but I saw no one else.</div>
   <div class="line">Just you, and the spark we stirred.</div>
+
+  <img src="your-photo1.jpg" class="photo" id="photo1" alt="Us together 1">
+
   <div class="line">Your smile, the clink of glasses near…</div>
   <div class="line">But my heart? It danced with yours alone.</div>
+
+  <img src="your-photo2.jpg" class="photo" id="photo2" alt="Us together 2">
+
   <div class="line">We twirled through seconds, kissed through time,</div>
   <div class="line">And I knew — this dance was home.</div>
   <div class="line">So darling, though the music fades…</div>
@@ -69,11 +97,27 @@
 </div>
 
 <script>
+  const btn = document.getElementById('startBtn');
+  const poem = document.getElementById('poem');
+  const music = document.getElementById('bgMusic');
   const lines = document.querySelectorAll('.line');
-  lines.forEach((line, i) => {
-    setTimeout(() => {
-      line.style.opacity = 1;
-    }, i * 5000); // 5 seconds between each line
+  const photo1 = document.getElementById('photo1');
+  const photo2 = document.getElementById('photo2');
+
+  btn.addEventListener('click', () => {
+    music.play();
+    btn.style.display = 'none';
+    poem.style.display = 'block';
+
+    // Reveal poem lines and photos
+    lines.forEach((line, i) => {
+      setTimeout(() => {
+        line.style.opacity = 1;
+      }, i * 5000);
+    });
+
+    setTimeout(() => { photo1.style.opacity = 1; }, 4 * 5000);
+    setTimeout(() => { photo2.style.opacity = 1; }, 6 * 5000);
   });
 </script>
 
