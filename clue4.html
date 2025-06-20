@@ -1,1 +1,80 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 4 - Our First Kiss</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #fbd3e9, #bb377d);
+      font-family: 'Georgia', cursive;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .section {
+      max-width: 700px;
+      margin: 40px auto;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .section img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      margin-bottom: 15px;
+    }
+    .show {
+      opacity: 1;
+    }
+    button {
+      padding: 12px 28px;
+      font-size: 16px;
+      background-color: #ff3366;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #e62e5c;
+    }
+  </style>
+</head>
+<body>  <div class="section" id="section1">
+    <img src="arrival.jpg" alt="Arrival">
+    <p>26 hours. 3 countries. 2 sandwiches. 0 sleep. And there she was.</p>
+  </div>  <div class="section" id="section2">
+    <img src="waiting.jpg" alt="Her Waiting">
+    <p>She wore her best clothes. Her hair was perfect. I probably smelled like airplane seats and ambition.</p>
+  </div>  <div class="section" id="section3">
+    <img src="kiss.jpg" alt="The Kiss">
+    <p>Her first kiss. My hundredth nervous one.<br>
+    We fumbled with the masks like they were puzzles.<br>
+    It was short, awkward... and it melted something in me.<br>
+    She panicked. I grinned. And the world changed.</p>
+  </div>  <div class="section" id="nextSection">
+    <button onclick="goToNextPage()">When you're ready... press this</button>
+  </div>  <script>
+    const sections = ["section1", "section2", "section3", "nextSection"];
+    let current = 0;
 
+    function showNext() {
+      if (current < sections.length) {
+        document.getElementById(sections[current]).classList.add("show");
+        current++;
+        if (current < sections.length) {
+          setTimeout(showNext, 3000);
+        }
+      }
+    }
+
+    function goToNextPage() {
+      window.location.href = "clue6.html";
+    }
+
+    window.onload = () => setTimeout(showNext, 1000);
+  </script></body>
+</html>
