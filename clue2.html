@@ -73,6 +73,13 @@
       margin-top: 5px;
     }
 
+    .poem {
+      margin-top: 15px;
+      font-style: italic;
+      font-size: 15px;
+      display: none;
+    }
+
     #continueButton {
       display: none;
       margin-top: 40px;
@@ -95,6 +102,12 @@
       <input type="text" id="answer1" placeholder="Write your answer...">
       <button onclick="checkAnswer(1)">Unlock</button>
       <div class="error" id="error1"></div>
+      <div class="poem" id="poem1">
+        Before you spoke in perfect lines,<br>
+        You needed help to bridge the signs.<br>
+        A word you made, so pure, so sweet—<br>
+        Our laughs began where hearts would meet.
+      </div>
     </div>
 
     <!-- Right Photo -->
@@ -104,6 +117,12 @@
       <input type="text" id="answer2" placeholder="Write your answer...">
       <button onclick="checkAnswer(2)">Unlock</button>
       <div class="error" id="error2"></div>
+      <div class="poem" id="poem2">
+        In stillness, fate began to dance,<br>
+        Between two lands, a fleeting chance.<br>
+        I found you there, in quiet grace—<br>
+        A heart I knew. A sacred place.
+      </div>
     </div>
   </div>
 
@@ -121,6 +140,7 @@
         if (answer1 === "tranductor") {
           document.getElementById("photo1Box").classList.add("unlocked");
           document.getElementById("error1").innerText = "";
+          document.getElementById("poem1").style.display = "block";
           unlocked1 = true;
         } else {
           document.getElementById("error1").innerText = "Try again, Amor. You used to say it all the time.";
@@ -131,6 +151,7 @@
         if (answer2 === "denmark") {
           document.getElementById("photo2Box").classList.add("unlocked");
           document.getElementById("error2").innerText = "";
+          document.getElementById("poem2").style.display = "block";
           unlocked2 = true;
         } else {
           document.getElementById("error2").innerText = "Nope, not Sweden. Not Brazil. That quiet in-between place.";
