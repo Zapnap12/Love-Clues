@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Four – What We Might Have Said</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Georgia', cursive;
+      color: #4b1d3f;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .chat-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .message {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 12px;
+      max-width: 70%;
+      text-align: left;
+      font-size: 17px;
+      line-height: 1.6;
+      position: relative;
+      display: inline-block;
+    }
+    .johan {
+      background-color: #fddde6;
+      color: #4b1d3f;
+      align-self: flex-end;
+      float: right;
+    }
+    .eibe {
+      background-color: #d6f5f2;
+      color: #003f3f;
+      align-self: flex-start;
+      float: left;
+    }
+    .label {
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .fade {
+      display: none;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; display: block; }
+    }
+    .photo {
+      margin-top: 30px;
+      display: none;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .next-btn {
+      margin-top: 30px;
+      padding: 10px 25px;
+      font-size: 16px;
+      background-color: #e75480;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .starter {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+    .center-message {
+      margin-top: 30px;
+      font-size: 18px;
+      font-style: italic;
+      display: none;
+    }
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="starter">I don’t remember our first conversation...<br>But I imagine it went something like this.</div><div id="chat">
+  <div class="message eibe fade clearfix"><div class="label">Eibe</div>Hi 😅</div>
+  <div class="message johan fade clearfix"><div class="label">Johan</div>Hey… I didn’t expect someone like you here.</div>
+  <div class="message eibe fade clearfix"><div class="label">Eibe</div>Like me?</div>
+  <div class="message johan fade clearfix"><div class="label">Johan</div>Yeah… beautiful.</div>
+  <div class="message eibe fade clearfix"><div class="label">Eibe</div>You’re sweet.</div>
+  <div class="message johan fade clearfix"><div class="label">Johan</div>I’m honest.</div>
+  <div class="message eibe fade clearfix"><div class="label">Eibe</div>You’re funny too.</div>
+  <div class="message johan fade clearfix"><div class="label">Johan</div>You make me want to be.</div>
+</div>
+
+<div id="centerText" class="center-message fade">These words were meant to build something…</div>
+<img id="finalPhoto" class="photo" src="usnow.jpg" alt="Us now">
+
+<button id="nextBtn" class="next-btn" onclick="showNext()">Next</button>
+
+  </div>  <script>
+    let index = 0;
+    const messages = document.querySelectorAll('.fade');
+
+    function showNext() {
+      if (index < messages.length) {
+        messages[index].style.display = 'block';
+        index++;
+      } else if (index === messages.length) {
+        document.getElementById('centerText').style.display = 'block';
+        index++;
+      } else if (index === messages.length + 1) {
+        document.getElementById('finalPhoto').style.display = 'block';
+        document.getElementById('nextBtn').innerText = 'Continue Our Story';
+        index++;
+      } else {
+        window.location.href = 'clue4.html';
+      }
+    }
+  </script></body>
+</html>
