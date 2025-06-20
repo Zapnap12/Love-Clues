@@ -2,99 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Clue One – You Are My World</title>
+  <title>To My Amor</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Cursive', 'Georgia', serif;
-      background-color: #ffe6ed;
-      color: #8a4f63; /* Dusty mauve */
+      background: linear-gradient(to bottom, #ffe6ed, #fff0f5);
+      color: #8a4f63;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      padding: 80px 20px;
     }
-    .container {
+
+    .intro-container {
       max-width: 600px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
-    .container img {
-      width: 100%;
-      height: auto;
-      max-height: 400px;
-      object-fit: contain;
-      border-radius: 12px;
+
+    h1 {
+      font-size: 28px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
+
     p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 10px 0;
+    }
+
+    .start-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
       font-size: 16px;
-      line-height: 1.6;
-    }
-    input[type="text"] {
-      padding: 10px;
-      width: 70%;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-    button {
-      padding: 10px 20px;
-      margin-top: 20px;
-      font-size: 14px;
-      background-color: #b04156; /* Deeper rose */
       color: white;
+      background-color: #b04156;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      text-decoration: none;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
-    .error {
-      color: crimson;
-      margin-top: 10px;
+
+    .start-button:hover {
+      background-color: #8a2f44;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="globe.png" alt="You are my world">
-    <p style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">
-      You<br>are<br>my<br>world
-    </p>
+  <div class="intro-container">
+    <h1>To My Amor</h1>
 
-    <h2>Clue One</h2>
-    <p>
-      The world had shut its doors. <br><br>
-      Flights grounded. Borders closed. <br>
-      But somehow… you were there — <br>
-      in a country I never thought I’d find you.<br><br>
-      Not Sweden. Not Brazil. <br>
-      But that strange, quiet space in between. <br>
-      You moved there for a moment. <br>
-      Just long enough for fate to move too.
-    </p>
-    <p>In what country did I find you?</p>
-    <input type="text" id="passwordInput" placeholder="Write your answer here...">
-    <br>
-    <button onclick="checkPassword()">Unlock</button>
-    <div class="error" id="errorMsg"></div>
+    <p>The world paused.</p>
+    <p>And in that stillness...</p>
+    <p>I found a voice that felt like home.</p>
+
+    <p>This journey isn't a test.</p>
+    <p>It's a reminder —</p>
+    <p>of how unforgettable you are.</p>
+
+    <p>Each clue is a memory.</p>
+    <p>Each page is a piece of us.</p>
+
+    <p style="margin-top: 30px;">Ready?</p>
+
+    <a href="clue1.html" class="start-button">Start the Journey →</a>
   </div>
-
-  <script>
-    function checkPassword() {
-      const correctAnswer = "denmark";
-      const input = document.getElementById("passwordInput").value.trim().toLowerCase();
-      if (input === correctAnswer) {
-        window.location.href = "clue2.html";
-      } else {
-        document.getElementById("errorMsg").innerText = "Not quite, Amo. Think of where the world paused… and you appeared.";
-      }
-    }
-  </script>
 </body>
 </html>
