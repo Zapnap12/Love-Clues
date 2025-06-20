@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clue Two – Unlock My Heart</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #ffe6ed;
+      color: #b3003c;
+      text-align: center;
+      padding: 80px 20px;
+    }
 
+    h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #cc0044;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .photo-box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      max-width: 300px;
+    }
+
+    .photo-box img {
+      width: 100%;
+      border-radius: 10px;
+      filter: blur(10px);
+      transition: filter 0.3s ease;
+    }
+
+    .photo-box.unlocked img {
+      filter: none;
+    }
+
+    .riddle {
+      font-size: 16px;
+      margin: 15px 0;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-top: 10px;
+      font-size: 15px;
+      background-color: #cc3366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: crimson;
+      margin-top: 5px;
+    }
+
+    #continueButton {
+      display: none;
+      margin-top: 40px;
+      font-size: 18px;
+      background-color: #b3003c;
+      padding: 12px 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Clue Two ♥️</h2>
+  <p>Two memories. Two hearts. Two riddles to solve before the next chapter reveals itself.</p>
+
+  <div class="container">
+    <!-- Left Photo -->
+    <div class="photo-box" id="photo1Box">
+      <img src="photo1.jpg" alt="Photo One" id="photo1">
+      <div class="riddle">What word did you always say when you needed translation?</div>
+      <input type="text" id="answer1" placeholder="Write your answer...">
+      <button onclick="checkAnswer(1)">Unlock</button>
+      <div class="error" id="error1"></div>
+    </div>
+
+    <!-- Right Photo -->
+    <div class="photo-box" id="photo2Box">
+      <img src="photo2.jpg" alt="Photo Two" id="photo2">
+      <div class="riddle">What was the country I found you in during the pandemic?</div>
+      <input type="text" id="answer2" placeholder="Write your answer...">
+      <button onclick="checkAnswer(2)">Unlock</button>
+      <div class="error" id="error2"></div>
+    </div>
+  </div>
+
+  <button id="continueButton" onclick="goToNextPage()">Continue the Journey ♥️</button>
+
+  <script>
+    let unlocked1 = false;
+    let unlocked2 = false;
+
+    function checkAnswer(boxNumber) {
+      const answer1 = document.getElementById("answer1").value.trim().toLowerCase();
+      const answer2 = document.getElementById("answer2").value.trim().toLowerCase();
+
+      if (boxNumber === 1) {
+        if (answer1 === "tranductor") {
+          document.getElementById("photo1Box").classList.add("unlocked");
+          document.getElementById("error1").innerText = "";
+          unlocked1 = true;
+        } else {
+          document.getElementById("error1").innerText = "Try again, Amor. You used to say it all the time.";
+        }
+      }
+
+      if (boxNumber === 2) {
+        if (answer2 === "denmark") {
+          document.getElementById("photo2Box").classList.add("unlocked");
+          document.getElementById("error2").innerText = "";
+          unlocked2 = true;
+        } else {
+          document.getElementById("error2").innerText = "Nope, not Sweden. Not Brazil. That quiet in-between place.";
+        }
+      }
+
+      if (unlocked1 && unlocked2) {
+        document.getElementById("continueButton").style.display = "inline-block";
+      }
+    }
+
+    function goToNextPage() {
+      window.location.href = "clue3.html";
+    }
+  </script>
+
+</body>
+</html>
