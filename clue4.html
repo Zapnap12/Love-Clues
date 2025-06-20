@@ -36,6 +36,11 @@
       margin-top: 40px;
     }
 
+    #nextButton {
+      opacity: 0;
+      transition: opacity 1.5s ease-in;
+    }
+
     audio {
       display: none;
     }
@@ -52,44 +57,51 @@
   </audio>
 
   <div id="poem" style="margin-top: 40px;">
-    <div class="line">Our first New Year together...</div>
+    <div class="line">Our first New Year together…</div>
     <div class="line">Laughter in the air, candlelight dancing on the walls.</div>
     <div class="line">We ate, we drank, we kissed…</div>
     <div class="line">And you pulled me close —</div>
     <div class="line">to a song I’ll never forget.</div>
+    <img src="photo1.jpg" class="photo" alt="Us Dancing">
+    <div class="line">Your arms, my safe place.</div>
+    <div class="line">My lips, your favorite escape.</div>
+    <img src="photo2.jpg" class="photo" alt="New Year Kiss">
     <div class="line">"Save the Last Dance for Me" played…</div>
     <div class="line">And I did.</div>
     <div class="line">I’m still dancing, Eibe.</div>
     <div class="line">Still yours, still holding you close in every beat.</div>
-    <img src="photo1.jpg" class="photo" alt="Us Dancing">
-    <img src="photo2.jpg" class="photo" alt="New Year Kiss">
   </div>
 
   <button id="nextButton" onclick="goToNextPage()">Next Page</button>
 
   <script>
-    let lines, index = 0, interval;
+    let lines, index = 0;
 
     function startPoem() {
       document.getElementById("startButton").style.display = "none";
       document.getElementById("romanticSong").play();
 
       lines = document.querySelectorAll('.line, .photo');
-      interval = setInterval(revealNext, 4000);
-    }
+      revealNextLine(); // start immediately
 
-    function revealNext() {
-      if (index < lines.length) {
-        lines[index].style.opacity = 1;
-        index++;
-      } else {
-        clearInterval(interval);
+      // Start revealing one by one
+      const interval = setInterval(() => {
+        if (index < lines.length) {
+          lines[index].style.opacity = 1;
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 6000); // one line or image every 6 seconds
+
+      // Show next button after 2 minutes 10 seconds
+      setTimeout(() => {
         document.getElementById("nextButton").style.opacity = 1;
-      }
+      }, 130000); // 130 seconds = 2 minutes 10 seconds
     }
 
     function goToNextPage() {
-      window.location.href = "page5.html"; // Update this when you know the real page name
+      window.location.href = "page5.html"; // Update as needed
     }
   </script>
 
