@@ -98,30 +98,32 @@
     <!-- Left Photo -->
     <div class="photo-box" id="photo1Box">
       <img src="dubble1.jpg" alt="Photo One" id="photo1">
-      <div class="riddle">What word did you always say when you needed translation?</div>
+      <div class="riddle">What tool did you use a lot of as we got to know each other?</div>
       <input type="text" id="answer1" placeholder="Write your answer...">
       <button onclick="checkAnswer(1)">Unlock</button>
       <div class="error" id="error1"></div>
       <div class="poem" id="poem1">
         Before you spoke in perfect lines,<br>
-        You needed help to bridge the signs.<br>
-        A word you made, so pure, so sweet—<br>
-        Our laughs began where hearts would meet.
+        You needed help to make me see how pefect a person could be.<br>
+        A word you made, so pure, so sweet.<br>
+        Our laughs began and hearts melt.
+        And I knew you were everything i ever dreamed of.
       </div>
     </div>
 
     <!-- Right Photo -->
     <div class="photo-box" id="photo2Box">
       <img src="dubble2.jpg" alt="Photo Two" id="photo2">
-      <div class="riddle">What was the country I found you in during the pandemic?</div>
+      <div class="riddle">What was the first movie we ever watched together?</div>
       <input type="text" id="answer2" placeholder="Write your answer...">
       <button onclick="checkAnswer(2)">Unlock</button>
       <div class="error" id="error2"></div>
       <div class="poem" id="poem2">
-        In stillness, fate began to dance,<br>
-        Between two lands, a fleeting chance.<br>
-        I found you there, in quiet grace—<br>
-        A heart I knew. A sacred place.
+        In stillness, or craving, more we sought.<br>
+        The time we spent never enough, more and more.<br>
+        You said it then, a movie to watch.<br>
+        Here we are, years have gone and movies in thousands we watch. 
+        And thousands more I hope to see, only with thee.  
       </div>
     </div>
   </div>
@@ -137,7 +139,7 @@
       const answer2 = document.getElementById("answer2").value.trim().toLowerCase();
 
       if (boxNumber === 1) {
-        if (answer1 === "tranductor") {
+        if (answer1 === "google translate") {
           document.getElementById("photo1Box").classList.add("unlocked");
           document.getElementById("error1").innerText = "";
           document.getElementById("poem1").style.display = "block";
@@ -148,7 +150,7 @@
       }
 
       if (boxNumber === 2) {
-        if (answer2 === "denmark") {
+        if (answer2 === "titanic") {
           document.getElementById("photo2Box").classList.add("unlocked");
           document.getElementById("error2").innerText = "";
           document.getElementById("poem2").style.display = "block";
